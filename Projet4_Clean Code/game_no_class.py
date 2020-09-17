@@ -33,6 +33,17 @@ clock = pygame.time.Clock()
 
 myFont = pygame.font.SysFont("monospace",35)
 
+def set_level(score, SPEED):
+    if score < 20:
+        SPEED = 5
+    elif score < 30:
+        SPEED = 10
+    elif score < 60:
+        SPEED = 15
+    else:
+        SPEED =30
+    return(SPEED)
+
 def drop_enemies(enemy_list):
     delay = random.random()
     if len(enemy_list) < 10 and delay < 0.1:         # spawn with delay
@@ -105,6 +116,8 @@ while not game_over:
 
     drop_enemies(enemy_list)
     score = update_enemy_positions(enemy_list, score)
+    SPEED = set_level(score, SPEED)
+
     
     # Print score on screen
     #print(score)
