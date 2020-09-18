@@ -1,6 +1,7 @@
 # Référence
 # https://www.youtube.com/watch?v=731LoaZCUjo&feature=youtu.be
 # wwww.pygame.org
+import pygame
 from color import Color
 
 class Player:
@@ -27,6 +28,6 @@ class LargeEnemy(Player):
     def __init__(self, x, y):
         super().__init__(x,y,size=100, color=Color.BLUE)
 
-class LargeEnemy(Player):
+class HumanPlayer(Player):
     def __init__(self, x, y):
         super().__init__(x,y,size=50, color=Color.RED)
