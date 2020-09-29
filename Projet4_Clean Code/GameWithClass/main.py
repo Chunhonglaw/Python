@@ -36,5 +36,4 @@ if __name__ == "__main__":
     screen = Screen()
     player = HumanPlayer(screen.width/2, screen.height-100)
     game = Game()
-
     play_game(screen, player, game)
